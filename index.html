@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CBS &amp; You</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+    <link href="https://ok1static.oktacdn.com/assets/js/sdk/okta-signin-widget/1.7.0/css/okta-sign-in.min.css" rel="stylesheet">
+    <link href="css/all.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="https://ok1static.oktacdn.com/assets/js/sdk/okta-signin-widget/1.7.0/js/okta-sign-in.min.js" type="text/javascript"></script>
+  </head>
+  <body ng-app="loginApp" ng-controller="mainController" >
+      <header id="app-header">
+          <div class="container">
+              <h1>The sign-in process for CBS &amp; YOU has been updated</h1>
+          </div>
+      </header>
+      
+      <div class="container" id="main-wrapper">  
+          <div class="row">
+              <div class="col-sm-5">
+                <div ng-class="{faded : passtest == false}">
+                    <hgroup>
+                        <h3 class="colored blue">Current CBS Employees</h3>
+                        <h4 class="colored grey">Use your CBS username and password to sign-in</h4>
+                    </hgroup>
+                    <hgroup>
+                        <h3 class="colored blue">Former CBS Employees,<br> or those without CBS credentials</h3>
+                        <h4 class="colored grey">Complete a <span ng-click="passtest = ! passtest" class="colored gold">one time registration</span> to re-activate you account.</h4>
+                    </hgroup>
+                    <div class="well initial-check show-hide" ng-show="passtest">
+                        <h2>Let's Start!</h2>
+                        <p>What email address, or username, have you used to sign-in to CBS &amp; YOU?</p>
+                        <form ng-submit="findUser(uname)">
+                            <div class="group-input">
+                                <span class="inner-input">
+                                    <label class="sr-only" for="inlineFormInput">Username or email</label>
+                                    <span class="input-tooltip icon form-help-16" data-hasqtip="0"></span>
+                                    <span class="icon input-icon person-16-gray"></span>
+                                    <input type="text"  ng-model="uname" name="uname" placeholder="Username or Email">
+                                </span>
+                            </div>
+                            <input type="submit" class="btn btn-primary form-submit center-block faded" value="Continue" ng-class="{faded : uname.length < 4}">
+                        </form>
+                    </div>
+                  </div>
+                <div ng-show="msg" class="show-hide msg">
+                    <p class="alert alert-warning">{{msg}}</p>
+                </div>
+              </div>
+              <div class="col-sm-5 pull-right" ng-class="{faded : passtest == true}">
+                  <div class="form-display" ng-view></div>
+              </div>
+          </div>
+      </div>
+
+      
+      <script src="js/angular.min.js"></script>
+      <script src="js/angular-route.min.js"></script>
+      <script src="js/ui-bootstrap-tpls-2.2.0.min.js"></script>
+      <script src="js/angular.animate.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+      <script src="js/jquery.maskedinput.min.js"></script>
+      <script src="js/app.js"></script>
+  </body>
+</html>
+
+<!-- 
+JIM
+-->

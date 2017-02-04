@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css?family=Catamaran:200,400,800');
+@import 'bourbon/bourbon';
+@import 'bootstrap';
+@import 'glyphs';
+@import 'variables';
+@import 'mixins';
+@import 'okta-theme';
+.form-display {
+    bottom:0; 
+    position:absolute; 
+    top:0;  
+    width:100%; 
+}
+.msg {
+    @include transition(all 0.5s);
+}
+.colored {
+    &.blue {
+        color: $cbs-blue;
+    }
+    &.grey {
+        color: $cbs-grey;   
+    }
+    &.gold {
+        color: $color-4;
+        cursor: pointer;
+    }
+}
+a {
+    @include transition(all 0.5s);
+    &:hover {
+        text-decoration: none;
+        font-weight: 400;
+    }
+}
+h1,h2,h3,h4,h5,h6 {
+    font-family: $primary;
+    font-weight: 200;
+    margin-top: 0;      
+}
+h4 {
+    margin-bottom: 30px;
+}
+
+#app-header {      
+    background: $cbs-blue;  
+    min-height: 30vh;
+    @include flexbox;
+    @include flexAlignItems(center);
+    h1 {
+        color: #fff;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+    }
+}
+#left-side {
+    .title-group {
+        font-weight: 200;       
+    }
+}       
+#main-wrapper {
+    margin-top: 50px;       
+}
+.primary-auth {
+    .auth-footer  {             
+        .help {
+            display: none;
+        }
+        .help-links {
+            display: block!important;  
+            padding-bottom: 10px;
+            li {
+                float: left;
+                &:after {
+                    content: '|';
+                    padding: 0 5px; 
+                    color: #eaeaea; 
+                }
+                &:last-child {
+                    &:after {
+                        content: '';
+                    }
+                }
+            }
+        }
+    }
+}
+.inner-input {
+    display: block;
+    position: relative;
+    @include border-radius(10px);
+    max-width: 400px;
+    .icon {
+        position: absolute;
+        opacity: 0.3;
+        top: 8px;
+    }
+    .input-icon {
+        left: 10px;;
+    }
+    .input-tooltip {
+        right: 25px;    
+    }
+    input {
+        line-height: 2.5;
+        padding: 0 30px;
+        width: 100%;
+    }
+}
+.form-submit {
+    padding: 15px 30px;
+    margin-top: 10px;
+}
+
+.faded {
+    opacity: 0.2;
+    @include transition(all 0.5s);
+}
+// Angular animations
+
+.ng-enter           { animation: scaleUp 0.5s both ease-in; z-index: 8888; }
+.ng-leave           { animation: shrinkHide 0.5s both ease-in; z-index: 8887; }
+.show-hide {
+  @include transition(all 0.5s);
+}
+.show-hide.ng-hide {
+  opacity: 0;
+}

@@ -1,0 +1,60 @@
+
+    <div id="okta-sign-in" class="auth-container main-container no-beacon register-form">	      
+        <div class="okta-sign-in-header auth-header">	        	        
+            <img src="images/cbsIST_logo_blue.svg" class="auth-org-logo">	        	        
+            <div data-type="beacon-container" class="beacon-container"></div>	      
+        </div>	      
+        <div class="auth-content">
+            <div class="auth-content-inner">
+                <div class="primary-auth">
+                    <form class="primary-auth-form o-form o-form-edit-mode" ng-submit="findUser()">
+                        <div class="o-form-content o-form-theme clearfix">	
+                            <p>We need this information to verify your registration</p>	
+                            <div class="o-form-error-container"></div>	      
+                            <div class="o-form-fieldset-container">
+                                <div class="o-form-fieldset o-form-label-top">
+                                    <div class="o-form-input">
+                                        <span class="o-form-control okta-form-input-field input-fix">  
+                                            <input type="text" placeholder="First Name" name="fname" ng-model="fname" value="" autocomplete="off">	 
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="o-form-fieldset o-form-label-top">
+                                    <div class="o-form-input">
+                                        <span class="o-form-control okta-form-input-field input-fix">	           
+                                            <input type="text" id="dob" placeholder="Birth month and day (MMDD)" name="dob" ng-model="dob" value="" autocomplete="off">	    
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="o-form-fieldset o-form-label-top">
+                                    <div class="o-form-input">
+                                        <span class="o-form-control okta-form-input-field input-fix">	           
+                                            <input type="text" placeholder="Last four of SSN" name="ssn" ng-model="ssn" value="" autocomplete="off"> 
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="o-form-fieldset o-form-label-top">
+                                    <div class="o-form-input">
+                                        <span class="o-form-control okta-form-input-field input-fix">	           
+                                            <input type="email" placeholder="Email Address" name="email" value="" autocomplete="off">	    
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="o-form-fieldset o-form-label-top">
+                                    <div class="o-form-input">
+                                        <span class="o-form-control okta-form-input-field input-fix">	           
+                                            <input type="text" placeholder="Re-enter Email" name="cemail" ng-model="cemail" value="" autocomplete="off">	    
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>	    
+                        </div>	  
+                        <div class="o-form-button-bar">
+                            <input class="button button-primary" type="submit" value="Confirm Identity">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
